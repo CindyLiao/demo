@@ -6,15 +6,21 @@
 -->
 <hibernate-mapping>
     <class name="com.bean.Organization" table="organization" catalog="newdb">
-        <id name="orgId" type="java.lang.Integer">
+        <id name="orgId" type="integer">
             <column name="OrgId" />
             <generator class="identity" />
         </id>
-        <property name="orgName" type="java.lang.String">
+        <property name="orgName" type="string">
             <column name="OrgName" length="45" />
         </property>
-        <property name="parentOrgId" type="java.lang.Integer">
+        <property name="parentOrgId" type="integer">
             <column name="ParentOrgId" />
+        </property>
+        <property name="orgType" type="string">
+            <column name="OrgType" length="45" />
+        </property>
+        <property name="orgDesc" type="string">
+            <column name="OrgDesc" />
         </property>
         <set name="positions" inverse="true">
             <key>
@@ -24,10 +30,10 @@
         </set>
         <set name="employees" table="org_emp_relation" catalog="newdb">
             <key>
-                <column name="OrgId" />
+                <column name="OrgId" not-null="true" />
             </key>
             <many-to-many entity-name="com.bean.Employee">
-                <column name="EmpId" />
+                <column name="EmpId" not-null="true" />
             </many-to-many>
         </set>
     </class>

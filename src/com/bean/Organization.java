@@ -14,6 +14,8 @@ public class Organization implements java.io.Serializable {
 	private Integer orgId;
 	private String orgName;
 	private Integer parentOrgId;
+	private String orgType;
+	private String orgDesc;
 	private Set positions = new HashSet(0);
 	private Set employees = new HashSet(0);
 
@@ -24,10 +26,12 @@ public class Organization implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Organization(String orgName, Integer parentOrgId, Set positions,
-			Set employees) {
+	public Organization(String orgName, Integer parentOrgId, String orgType,
+			String orgDesc, Set positions, Set employees) {
 		this.orgName = orgName;
 		this.parentOrgId = parentOrgId;
+		this.orgType = orgType;
+		this.orgDesc = orgDesc;
 		this.positions = positions;
 		this.employees = employees;
 	}
@@ -56,6 +60,22 @@ public class Organization implements java.io.Serializable {
 
 	public void setParentOrgId(Integer parentOrgId) {
 		this.parentOrgId = parentOrgId;
+	}
+
+	public String getOrgType() {
+		return this.orgType;
+	}
+
+	public void setOrgType(String orgType) {
+		this.orgType = orgType;
+	}
+
+	public String getOrgDesc() {
+		return this.orgDesc;
+	}
+
+	public void setOrgDesc(String orgDesc) {
+		this.orgDesc = orgDesc;
 	}
 
 	public Set getPositions() {

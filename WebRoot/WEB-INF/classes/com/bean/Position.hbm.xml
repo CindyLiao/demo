@@ -6,24 +6,27 @@
 -->
 <hibernate-mapping>
     <class name="com.bean.Position" table="position" catalog="newdb">
-        <id name="posId" type="java.lang.Integer">
+        <id name="posId" type="integer">
             <column name="PosId" />
             <generator class="identity" />
         </id>
-        <many-to-one name="organization" class="com.bean.Organization" fetch="join" lazy="false">
+        <many-to-one name="organization" class="com.bean.Organization" fetch="select">
             <column name="OrgId" />
         </many-to-one>
-        <many-to-one name="role" class="com.bean.Role" fetch="join" lazy="false">
+        <many-to-one name="role" class="com.bean.Role" fetch="select">
             <column name="RoleId" />
         </many-to-one>
-        <property name="empId" type="java.lang.Integer">
+        <property name="empId" type="integer">
             <column name="EmpId" />
         </property>
-        <property name="privilege" type="java.lang.Integer">
+        <property name="privilege" type="integer">
             <column name="Privilege" />
         </property>
-        <property name="posName" type="java.lang.String">
+        <property name="posName" type="string">
             <column name="PosName" length="45" />
+        </property>
+        <property name="posDesc" type="string">
+            <column name="PosDesc" />
         </property>
         <set name="employees" table="emp_pos_relation" catalog="newdb">
             <key>

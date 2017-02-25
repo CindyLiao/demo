@@ -11,10 +11,6 @@ public class Employee implements java.io.Serializable {
 
 	// Fields
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	private Integer empId;
 	private String firstName;
 	private Integer age;
@@ -32,10 +28,16 @@ public class Employee implements java.io.Serializable {
 	public Employee() {
 	}
 
+	/** minimal constructor */
+	public Employee(Integer empId) {
+		this.empId = empId;
+	}
+
 	/** full constructor */
-	public Employee(String firstName, Integer age, String gender,
-			Integer userId, String password, String lastName,
+	public Employee(Integer empId, String firstName, Integer age,
+			String gender, Integer userId, String password, String lastName,
 			Set abilities, Set positions, Set organizations) {
+		this.empId = empId;
 		this.firstName = firstName;
 		this.age = age;
 		this.gender = gender;
@@ -105,27 +107,27 @@ public class Employee implements java.io.Serializable {
 		this.lastName = lastName;
 	}
 
-	public Set getabilities() {
+	public Set getAbilities() {
 		return this.abilities;
 	}
 
-	public void setabilities(Set abilities) {
+	public void setAbilities(Set abilities) {
 		this.abilities = abilities;
 	}
 
-	public Set getpositions() {
+	public Set getPositions() {
 		return this.positions;
 	}
 
-	public void setpositions(Set positions) {
+	public void setPositions(Set positions) {
 		this.positions = positions;
 	}
 
-	public Set getorganizations() {
+	public Set getOrganizations() {
 		return this.organizations;
 	}
 
-	public void setorganizations(Set organizations) {
+	public void setOrganizations(Set organizations) {
 		this.organizations = organizations;
 	}
 

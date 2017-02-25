@@ -46,5 +46,7 @@ public interface EmployeeDAO {
 	public abstract void attachDirty(Employee instance);
 
 	public abstract void attachClean(Employee instance);
+	
+	public abstract List findPositionsByEmpId(int employeeid);
 
 }

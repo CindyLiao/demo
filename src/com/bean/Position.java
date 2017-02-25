@@ -17,6 +17,7 @@ public class Position implements java.io.Serializable {
 	private Integer empId;
 	private Integer privilege;
 	private String posName;
+	private String posDesc;
 	private Set employees = new HashSet(0);
 
 	// Constructors
@@ -27,12 +28,13 @@ public class Position implements java.io.Serializable {
 
 	/** full constructor */
 	public Position(Organization organization, Role role, Integer empId,
-			Integer privilege, String posName, Set employees) {
+			Integer privilege, String posName, String posDesc, Set employees) {
 		this.organization = organization;
 		this.role = role;
 		this.empId = empId;
 		this.privilege = privilege;
 		this.posName = posName;
+		this.posDesc = posDesc;
 		this.employees = employees;
 	}
 
@@ -84,6 +86,14 @@ public class Position implements java.io.Serializable {
 
 	public void setPosName(String posName) {
 		this.posName = posName;
+	}
+
+	public String getPosDesc() {
+		return this.posDesc;
+	}
+
+	public void setPosDesc(String posDesc) {
+		this.posDesc = posDesc;
 	}
 
 	public Set getEmployees() {

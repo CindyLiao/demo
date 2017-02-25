@@ -6,12 +6,15 @@
 -->
 <hibernate-mapping>
     <class name="com.bean.Role" table="role" catalog="newdb">
-        <id name="roleId" type="java.lang.Integer">
+        <id name="roleId" type="integer">
             <column name="RoleId" />
             <generator class="identity" />
         </id>
-        <property name="roleName" type="java.lang.String">
+        <property name="roleName" type="string">
             <column name="RoleName" length="45" />
+        </property>
+        <property name="roleDesc" type="string">
+            <column name="RoleDesc" />
         </property>
         <set name="positions" inverse="true">
             <key>

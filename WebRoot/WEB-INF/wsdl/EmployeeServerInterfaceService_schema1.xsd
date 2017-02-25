@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://server.com/" targetNamespace="http://server.com/" version="1.0">
+
+  <xs:element name="getAllCapacities" type="tns:getAllCapacities"/>
+
+  <xs:element name="getAllCapacitiesResponse" type="tns:getAllCapacitiesResponse"/>
+
+  <xs:element name="getAllEmployees" type="tns:getAllEmployees"/>
+
+  <xs:element name="getAllEmployeesResponse" type="tns:getAllEmployeesResponse"/>
+
+  <xs:element name="getAllOrgs" type="tns:getAllOrgs"/>
+
+  <xs:element name="getAllOrgsResponse" type="tns:getAllOrgsResponse"/>
+
+  <xs:element name="getAllPositions" type="tns:getAllPositions"/>
+
+  <xs:element name="getAllPositionsResponse" type="tns:getAllPositionsResponse"/>
+
+  <xs:element name="getAllRoles" type="tns:getAllRoles"/>
+
+  <xs:element name="getAllRolesResponse" type="tns:getAllRolesResponse"/>
+
+  <xs:element name="getEmpfromrole" type="tns:getEmpfromrole"/>
+
+  <xs:element name="getEmpfromroleResponse" type="tns:getEmpfromroleResponse"/>
+
+  <xs:element name="getEmployee" type="tns:getEmployee"/>
+
+  <xs:element name="getEmployeeNum" type="tns:getEmployeeNum"/>
+
+  <xs:element name="getEmployeeNumResponse" type="tns:getEmployeeNumResponse"/>
+
+  <xs:element name="getEmployeeResponse" type="tns:getEmployeeResponse"/>
+
+  <xs:element name="getPosition" type="tns:getPosition"/>
+
+  <xs:element name="getPositionResponse" type="tns:getPositionResponse"/>
+
+  <xs:element name="getRoles" type="tns:getRoles"/>
+
+  <xs:element name="getRolesResponse" type="tns:getRolesResponse"/>
+
+  <xs:element name="loginVerify" type="tns:loginVerify"/>
+
+  <xs:element name="loginVerifyResponse" type="tns:loginVerifyResponse"/>
+
+  <xs:complexType name="getAllEmployees">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getAllEmployeesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getEmployeeNum">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getEmployeeNumResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getEmpfromrole">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getEmpfromroleResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAllPositions">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getAllPositionsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAllCapacities">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getAllCapacitiesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAllOrgs">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getAllOrgsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getPosition">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getPositionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="loginVerify">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="loginVerifyResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getRoles">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getRolesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAllRoles">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getAllRolesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getEmployee">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getEmployeeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

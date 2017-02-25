@@ -72,6 +72,8 @@ public class EmployeeDAOImpl extends HibernateDaoSupport implements EmployeeDAO 
 			throw re;
 		}
 	}
+	
+	
 
 	/* (non-Javadoc)
 	 * @see com.dao.EmployeeDAO#findByExample(com.model.Employee)
@@ -111,7 +113,7 @@ public class EmployeeDAOImpl extends HibernateDaoSupport implements EmployeeDAO 
 		log.debug("finding Employee instance with property: " + propertyName
 				+ ", value: " + value);
 		try {
-			String queryString = "from Employee as model inner join model.organizations where model."
+			String queryString = "from Employee as model inner join fetch model.organizations where model."
 					+ propertyName + "= ?";
 			return getHibernateTemplate().find(queryString, value);
 		} catch (RuntimeException re) {
@@ -224,5 +226,18 @@ public class EmployeeDAOImpl extends HibernateDaoSupport implements EmployeeDAO 
 		return (EmployeeDAO) ctx.getBean("EmployeeDAO");
 	}
 	
+	/**
+	 * 根据empId查找positions
+	 */
+	public List findPositionsByEmpId(int employeeid) {
+		try {
+			String queryString = "from Employee as model inner join fetch model.positions where model.empId = ?";
+			List list = getHibernateTemplate().find(queryString, employeeid);
+			return list;
+		} catch (RuntimeException re) {
+			log.error("find by property name failed", re);
+			throw re;
+		}
+	}
 	
 }

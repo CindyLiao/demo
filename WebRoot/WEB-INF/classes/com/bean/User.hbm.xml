@@ -8,7 +8,7 @@
     <class name="com.bean.User" table="user" catalog="newdb">
         <id name="username" type="java.lang.String">
             <column name="username" length="45" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <property name="password" type="java.lang.String">
             <column name="password" length="45" />

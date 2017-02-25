@@ -6,19 +6,22 @@
 -->
 <hibernate-mapping>
     <class name="com.bean.Ability" table="ability" catalog="newdb">
-        <id name="abiId" type="java.lang.Integer">
+        <id name="abiId" type="integer">
             <column name="AbiId" />
             <generator class="identity" />
         </id>
-        <property name="abiName" type="java.lang.String">
-            <column name="AbiName" length="45" />
+        <property name="abiName" type="string">
+            <column name="AbiName" />
+        </property>
+        <property name="abiDesc" type="string">
+            <column name="AbiDesc" />
         </property>
         <set name="employees" inverse="true" table="emp_abi_relation" catalog="newdb">
             <key>
-                <column name="AbiId" />
+                <column name="abiId" not-null="true" />
             </key>
             <many-to-many entity-name="com.bean.Employee">
-                <column name="EmpId" />
+                <column name="empId" not-null="true" />
             </many-to-many>
         </set>
     </class>

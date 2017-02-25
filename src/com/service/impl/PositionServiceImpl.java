@@ -40,8 +40,8 @@ public class PositionServiceImpl implements PositionService{
 
 	
 
-	public List findByEmpId() {
-		List list= positiondao.findByEmpId(2);
+	public List findByEmpId(int employeeid) {
+		List list= positiondao.findByEmpId(employeeid);
 		System.out.println("ww");
 		return list;
 	}
@@ -52,6 +52,10 @@ public class PositionServiceImpl implements PositionService{
 
 	public Position findById(int positionid) {
 		return positiondao.findById(positionid);
+	}
+	
+	public List findAll(){
+		return positiondao.findAll();
 	}
 	
 	public List<Object[]> getPositions() {

@@ -34,6 +34,10 @@ public class AbilityServiceImpl implements AbilityService{
 		return abilitydao.findByAbiName(abilityname);
 	}
 
+	public List findAll() {
+		return abilitydao.findAll();
+	}
+	
 	public Ability findById(int abilityid) {
 		return abilitydao.findById(abilityid);
 	}

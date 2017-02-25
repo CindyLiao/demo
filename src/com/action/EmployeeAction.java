@@ -75,11 +75,11 @@ public class EmployeeAction extends ActionSupport implements ModelDriven<Employe
 			employeeservice.addEmployee(empa);
 			Organization orgtrue = new Organization();
 			orgtrue = organizationdao.findById(orgid);
-			OrgEmpRelation or = new OrgEmpRelation();
+			/*OrgEmpRelation or = new OrgEmpRelation();
 			or.setOeid(oeid);
 			or.setEmployee(empa);
 			or.setOrganization(orgtrue);
-			orgemprelationdao.save(or);
+			orgemprelationdao.save(or);*/
 			return SUCCESS;
 			
 		} catch (Exception e) {
@@ -145,13 +145,13 @@ public class EmployeeAction extends ActionSupport implements ModelDriven<Employe
 	public String editEmployee(){
 		Employee c=employeeservice.findById(employee.getEmpId());
 		employee.setEmpId(c.getEmpId());
-		employee.setabilities(c.getabilities());
+		employee.setAbilities(c.getAbilities());
 		employee.setAge(c.getAge());
 		employee.setFirstName(c.getFirstName());
 		employee.setLastName(c.getLastName());
 		employee.setGender(c.getGender());
-		employee.setorganizations(c.getorganizations());
-		employee.setpositions(c.getpositions());
+		employee.setOrganizations(c.getOrganizations());
+		employee.setOrganizations(c.getOrganizations());
 		employee.setPassword(c.getPassword());
 		employee.setUserId(c.getUserId());
 		return SUCCESS;

@@ -16,6 +16,8 @@ public interface AbilityService {
 	public abstract void deleteAbility(Ability ability);
 
 	public abstract List findByAbilityName(String abilityname);
+	
+	public abstract List findAll();
 
 	public abstract Ability findById(int abilityid);
 }

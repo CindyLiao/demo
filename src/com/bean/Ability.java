@@ -13,6 +13,7 @@ public class Ability implements java.io.Serializable {
 
 	private Integer abiId;
 	private String abiName;
+	private String abiDesc;
 	private Set employees = new HashSet(0);
 
 	// Constructors
@@ -22,8 +23,9 @@ public class Ability implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Ability(String abiName, Set employees) {
+	public Ability(String abiName, String abiDesc, Set employees) {
 		this.abiName = abiName;
+		this.abiDesc = abiDesc;
 		this.employees = employees;
 	}
 
@@ -43,6 +45,14 @@ public class Ability implements java.io.Serializable {
 
 	public void setAbiName(String abiName) {
 		this.abiName = abiName;
+	}
+
+	public String getAbiDesc() {
+		return this.abiDesc;
+	}
+
+	public void setAbiDesc(String abiDesc) {
+		this.abiDesc = abiDesc;
 	}
 
 	public Set getEmployees() {

@@ -1,5 +1,6 @@
 package com.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.bean.Employee;
@@ -46,5 +47,13 @@ public  class EmployeeServiceImpl implements EmployeeService{
 	
 	public List findAll() {
 		return employeedao.findAll();
+	}
+	
+	public int getEmployeeNum() {
+		return employeedao.findAll().size();
+	}
+	
+	public List findPositionsByEmpId(int employeeid){
+		return employeedao.findPositionsByEmpId(employeeid);
 	}
 }

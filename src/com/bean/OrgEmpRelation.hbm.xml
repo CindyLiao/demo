@@ -8,7 +8,7 @@
     <class name="com.bean.OrgEmpRelation" table="org_emp_relation" catalog="newdb">
         <id name="oeid" type="java.lang.Integer">
             <column name="OEId" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <many-to-one name="organization" class="com.bean.Organization" fetch="select">
             <column name="OrgId" />

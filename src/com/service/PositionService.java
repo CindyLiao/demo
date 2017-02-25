@@ -19,9 +19,11 @@ public interface PositionService {
 	
 	public abstract List findByPrivilege(int privilege);
 	
-	public abstract List findByEmpId();
+	public abstract List findByEmpId(int employeeid);
 	
 	public abstract List findByRoleId(int roleid);
+	
+	public abstract List findAll();
 
 	public abstract Position findById(int positionid);
 	
