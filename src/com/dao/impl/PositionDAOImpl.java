@@ -1,5 +1,6 @@
 package com.dao.impl;
 
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 import java.util.Set;
 import org.hibernate.LockMode;
@@ -98,7 +99,7 @@ public class PositionDAOImpl extends HibernateDaoSupport implements PositionDAO 
 		log.debug("finding Position instance with property: " + propertyName
 				+ ", value: " + value);
 		try {
-			String queryString = "from Position as model inner join model.employees where model."
+			String queryString = "from Position as model inner join fetch model.employees where model."
 					+ propertyName + "= ?";
 			return getHibernateTemplate().find(queryString, value);
 		} catch (RuntimeException re) {
@@ -141,7 +142,14 @@ public class PositionDAOImpl extends HibernateDaoSupport implements PositionDAO 
 	 * @see com.dao.PositionDAO#findByPosName(java.lang.Object)
 	 */
 	public List findByPosName(Object posName) {
-		return findByProperty(POS_NAME, posName);
+		log.debug("finding all Position instances and employees");
+		try {
+			String queryString = "select distinct p from Position p inner join fetch p.employees where p.posName=?";
+			return getHibernateTemplate().find(queryString, posName);
+		} catch (RuntimeException re) {
+			log.error("find all failed", re);
+			throw re;
+		}
 	}
 	
 	/* (non-Javadoc)
@@ -221,4 +229,5 @@ public class PositionDAOImpl extends HibernateDaoSupport implements PositionDAO 
 			throw re;
 		}
 	}
+	
 }

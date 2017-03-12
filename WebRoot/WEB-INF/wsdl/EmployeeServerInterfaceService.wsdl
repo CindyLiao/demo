@@ -18,17 +18,23 @@
   <message name="getRolesResponse">
     <part element="tns:getRolesResponse" name="parameters"/>
   </message>
-  <message name="getEmpfromrole">
-    <part element="tns:getEmpfromrole" name="parameters"/>
+  <message name="getEmployeeNum">
+    <part element="tns:getEmployeeNum" name="parameters"/>
   </message>
-  <message name="getEmpfromroleResponse">
-    <part element="tns:getEmpfromroleResponse" name="parameters"/>
+  <message name="getEmployeeNumResponse">
+    <part element="tns:getEmployeeNumResponse" name="parameters"/>
   </message>
   <message name="getEmployee">
     <part element="tns:getEmployee" name="parameters"/>
   </message>
   <message name="getEmployeeResponse">
     <part element="tns:getEmployeeResponse" name="parameters"/>
+  </message>
+  <message name="getEmpfromrole">
+    <part element="tns:getEmpfromrole" name="parameters"/>
+  </message>
+  <message name="getEmpfromroleResponse">
+    <part element="tns:getEmpfromroleResponse" name="parameters"/>
   </message>
   <message name="loginVerify">
     <part element="tns:loginVerify" name="parameters"/>
@@ -66,11 +72,11 @@
   <message name="getAllRolesResponse">
     <part element="tns:getAllRolesResponse" name="parameters"/>
   </message>
-  <message name="getEmployeeNum">
-    <part element="tns:getEmployeeNum" name="parameters"/>
+  <message name="getEmpByPosName">
+    <part element="tns:getEmpByPosName" name="parameters"/>
   </message>
-  <message name="getEmployeeNumResponse">
-    <part element="tns:getEmployeeNumResponse" name="parameters"/>
+  <message name="getEmpByPosNameResponse">
+    <part element="tns:getEmpByPosNameResponse" name="parameters"/>
   </message>
   <portType name="EmployeeServerInterfaceDelegate">
     <operation name="getPosition">
@@ -81,13 +87,17 @@
       <input message="tns:getRoles"/>
       <output message="tns:getRolesResponse"/>
     </operation>
-    <operation name="getEmpfromrole">
-      <input message="tns:getEmpfromrole"/>
-      <output message="tns:getEmpfromroleResponse"/>
+    <operation name="getEmployeeNum">
+      <input message="tns:getEmployeeNum"/>
+      <output message="tns:getEmployeeNumResponse"/>
     </operation>
     <operation name="getEmployee">
       <input message="tns:getEmployee"/>
       <output message="tns:getEmployeeResponse"/>
+    </operation>
+    <operation name="getEmpfromrole">
+      <input message="tns:getEmpfromrole"/>
+      <output message="tns:getEmpfromroleResponse"/>
     </operation>
     <operation name="loginVerify">
       <input message="tns:loginVerify"/>
@@ -113,9 +123,9 @@
       <input message="tns:getAllRoles"/>
       <output message="tns:getAllRolesResponse"/>
     </operation>
-    <operation name="getEmployeeNum">
-      <input message="tns:getEmployeeNum"/>
-      <output message="tns:getEmployeeNumResponse"/>
+    <operation name="getEmpByPosName">
+      <input message="tns:getEmpByPosName"/>
+      <output message="tns:getEmpByPosNameResponse"/>
     </operation>
   </portType>
   <binding name="EmployeeServerInterfacePortBinding" type="tns:EmployeeServerInterfaceDelegate">
@@ -138,7 +148,7 @@
         <soap:body use="literal"/>
       </output>
     </operation>
-    <operation name="getEmpfromrole">
+    <operation name="getEmployeeNum">
       <soap:operation soapAction=""/>
       <input>
         <soap:body use="literal"/>
@@ -148,6 +158,15 @@
       </output>
     </operation>
     <operation name="getEmployee">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getEmpfromrole">
       <soap:operation soapAction=""/>
       <input>
         <soap:body use="literal"/>
@@ -210,7 +229,7 @@
         <soap:body use="literal"/>
       </output>
     </operation>
-    <operation name="getEmployeeNum">
+    <operation name="getEmpByPosName">
       <soap:operation soapAction=""/>
       <input>
         <soap:body use="literal"/>

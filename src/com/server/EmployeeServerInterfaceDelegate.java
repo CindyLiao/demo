@@ -49,4 +49,8 @@ public class EmployeeServerInterfaceDelegate {
 		return employeeServerInterface.getEmployeeNum();
 	}
 
+	public String getEmpByPosName(String posName) {
+		return employeeServerInterface.getEmpByPosName(posName);
+	}
+
 }

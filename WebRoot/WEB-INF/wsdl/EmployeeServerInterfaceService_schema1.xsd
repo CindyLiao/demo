@@ -21,6 +21,10 @@
 
   <xs:element name="getAllRolesResponse" type="tns:getAllRolesResponse"/>
 
+  <xs:element name="getEmpByPosName" type="tns:getEmpByPosName"/>
+
+  <xs:element name="getEmpByPosNameResponse" type="tns:getEmpByPosNameResponse"/>
+
   <xs:element name="getEmpfromrole" type="tns:getEmpfromrole"/>
 
   <xs:element name="getEmpfromroleResponse" type="tns:getEmpfromroleResponse"/>
@@ -72,6 +76,18 @@
   </xs:complexType>
 
   <xs:complexType name="getEmpfromroleResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getEmpByPosName">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getEmpByPosNameResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="xs:string"/>
     </xs:sequence>

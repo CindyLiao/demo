@@ -3,6 +3,7 @@ package com.server;
 import java.util.HashMap;
 
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
@@ -344,5 +345,30 @@ public class GetEmpInfo {
 		json.put(map); 
 		System.out.println(json.toString());
  		return json.toString();
+	}
+	
+	/**
+	 * 
+	 * @param posName
+	 * @return 职位对应的empid
+	 */
+	public static String getEmpByPosName( String posName) { 
+		String[] posNameStr = posName.split(",");
+		JSONArray empjson=new JSONArray();
+		for ( String strPosName : posNameStr ) {
+			List<Position> posList = positionservice.findByPositionName( posName );
+			Iterator<Position> itposList = posList.iterator();
+			while( itposList.hasNext() ) {
+				Position pos = itposList.next();
+				Set<Employee> empSet = pos.getEmployees();
+				Iterator<Employee> itempSet = empSet.iterator();
+				while ( itempSet.hasNext() ) {
+					String empId = itempSet.next().getEmpId().toString();
+					empjson.put( empId);
+				}
+			}
+			
+		}
+		return empjson.toString();
 	}
 }

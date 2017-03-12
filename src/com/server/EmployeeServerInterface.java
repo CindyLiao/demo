@@ -51,4 +51,8 @@ public class EmployeeServerInterface {
 	public String getEmployeeNum() {
 		return GetEmpInfo.getEmployeeNum();
 	}
+	
+	public String getEmpByPosName( String posName) {
+		return GetEmpInfo.getEmpByPosName(posName);
+	}
 }
